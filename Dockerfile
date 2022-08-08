@@ -13,6 +13,7 @@ LABEL maintainer="Pablo Mansilla Ojeda <pablo@ppamo.cl>"
 LABEL version=0.1.0
 LABEL description="multiple net tools over a docker's busybox image"
 
+WORKDIR /mnt
 COPY bin/* /bin/
 COPY res/services /etc/
 COPY res/nmap-* /usr/local/share/nmap/

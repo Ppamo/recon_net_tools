@@ -20,8 +20,53 @@ The main idea is to create a set of tools to be easily copied and started on a l
 - [size](#a_size)
 - [socat](#a_socat)
 - [strings](#a_strings)
-- [wpscan](#a_wpscan)
-- [grpcdump](#a_grpcdump)
+- [go_metaDataPdf](#a_go_metaDataPdf)
+- [go_sshCrack](#a_go_sshCrack)
+- [go_sshSwarm](#a_go_sshSwarm)
+- [go_tcpProxy](#a_go_tcpProxy)
+- [go_sshTunnel](#a_go_sshTunnel)
+- [go_shell](#a_go_shell)
+- [go_forensicImage](#a_go_forensicImage)
+- [go_getGeoTagPhoto](#a_go_getGeoTagPhoto)
+- [go_rsaapp](#a_go_rsaapp)
+- [go_cipherOfCaesar](#a_go_cipherOfCaesar)
+- [go_cryptographer](#a_go_cryptographer)
+- [go_calculateYouByMac](#a_go_calculateYouByMac)
+- [go_getFileInfo](#a_go_getFileInfo)
+- [go_readingBootSector](#a_go_readingBootSector)
+- [go_webChecker](#a_go_webChecker)
+- [go_steganoImgArch](#a_go_steganoImgArch)
+- [go_detectSteganoImgAndExtractIt](#a_go_detectSteganoImgAndExtractIt)
+- [go_lookupIP](#a_go_lookupIP)
+- [go_lookupHost](#a_go_lookupHost)
+- [go_getMXRec](#a_go_getMXRec)
+- [go_getServName](#a_go_getServName)
+- [go_csprng](#a_go_csprng)
+- [go_bruteHtmlForm](#a_go_bruteHtmlForm)
+- [go_httpHead](#a_go_httpHead)
+- [go_findHtmlComm](#a_go_findHtmlComm)
+- [go_findFilesOnWebServ](#a_go_findFilesOnWebServ)
+- [go_userAgent](#a_go_userAgent)
+- [go_getHeader](#a_go_getHeader)
+- [go_grabbing](#a_go_grabbing)
+- [go_netScan](#a_go_netScan)
+- [go_base64](#a_go_base64)
+- [go_findWrFiles](#a_go_findWrFiles)
+- [go_fileTimestamp](#a_go_fileTimestamp)
+- [go_filePerm](#a_go_filePerm)
+- [go_fileOwnership](#a_go_fileOwnership)
+- [go_buildPNGmap](#a_go_buildPNGmap)
+- [go_extrLinkToMaltego](#a_go_extrLinkToMaltego)
+- [go_extrEmailToMaltego](#a_go_extrEmailToMaltego)
+- [go_findAltSites](#a_go_findAltSites)
+- [go_cipherROT13](#a_go_cipherROT13)
+- [go_vigenere](#a_go_vigenere)
+- [go_bookCipher](#a_go_bookCipher)
+- [go_perconscan](#a_go_perconscan)
+- [go_dnsGetA](#a_go_dnsGetA)
+- [go_subdomains](#a_go_subdomains)
+- [go_filepathInfoSearcher](#a_go_filepathInfoSearcher)
+- [go_icmpPayload](#a_go_icmpPayload)
 
 
 ---
@@ -119,51 +164,117 @@ nmap -v scanme.nmap.org
 docker run -ti --rm --network host ppamo/nettools:0.1.0 sh -c "nmap -v scanme.nmap.org"
 ```
 
+---
+
+## [nping](https://nmap.org/nping/): <a id='a_nping'></a>
+
+Is a tool for network packet generation, response analysis and response time measurement.
+
+A representative Nping execution sending packages at two different hosts:
+
+**Usage:**
+```sh
+nping -c 1 --tcp scanme.nmap.org google.com
+```
+
+**Docker usage:**
+```sh
+docker run -ti --rm --network host ppamo/nettools:0.1.0 sh -c "nping -c 1 --tcp scanme.nmap.org google.com"
+```
 
 ---
 
-## nping: <a id='a_nping'></a>
-- [homepage](https://nmap.org/nping/)
+## go_dnsGetA: <a id='a_go_dnsGetA'></a>
+
+A DNS resolver
+
+**Usage:**
+```sh
+go_dnsGetA github.com
+```
+
+**Docker usage:**
+```sh
+docker run -ti --rm --network host ppamo/nettools:0.1.1 sh -c "go_dnsGetA github.com"
+```
 
 ---
 
-## objcopy: <a id='a_objcopy'></a>
-- [man pages](https://man7.org/linux/man-pages/man1/objcopy.1.html)
+## go_lookupIP: <a id='a_go_lookupIP'></a>
 
+An IP lookup tool
 
----
+**Usage:**
+```sh
+go_lookupIP 8.8.8.8
+```
 
-## objdump: <a id='a_objdump'></a>
-- [man pages](https://man7.org/linux/man-pages/man1/objdump.1.html)
-
----
-
-## readelf: <a id='a_readelf'></a>
-- [man pages](https://sourceware.org/binutils/docs/binutils/readelf.html)
-
----
-
-## size: <a id='a_size'></a>
-- [man pages](https://linux.die.net/man/1/size)
+**Docker usage:**
+```sh
+docker run -ti --rm --network host ppamo/nettools:0.1.1 sh -c "go_lookupIP 8.8.8.8"
+```
 
 ---
 
-## socat: <a id='a_socat'></a>
-- [man pages](https://linux.die.net/man/1/socat)
+## go_getServName: <a id='a_go_getServName'></a>
+
+A hostname lookup tool
+
+**Usage:**
+```sh
+go_getServName github.com
+```
+
+**Docker usage:**
+```sh
+docker run -ti --rm --network host ppamo/nettools:0.1.1 sh -c "go_getServName github.com"
+```
 
 ---
 
-## strings: <a id='a_strings'></a>
-- [man pages](https://linux.die.net/man/1/strings)
+## go_sshCrack: <a id='a_go_sshCrack'></a>
+
+A ssh server cracker
+
+**Usage:**
+```sh
+go_sshCrack IPList userDic passDic
+```
+
+**Docker usage:**
+```sh
+docker run -ti --rm --network host ppamo/nettools:0.1.1 sh -c "go_sshCrack IPList userDic passDic"
+```
 
 ---
 
-## wpscan: <a id='a_wpscan'></a>
-- [homepage](https://github.com/krishpranav/wpscan)
+## go_bruteHtmlForm: <a id='a_go_bruteHtmlForm'></a>
+
+A force brute tool for web forms
+
+**Usage:**
+```sh
+go_bruteHtmlForm passwords.txt https://test.com/login admin username password
+```
+
+**Docker usage:**
+```sh
+docker run -ti --rm --network host ppamo/nettools:0.1.1 sh -c "go_bruteHtmlForm passwords.txt https://test.com/login admin username password"
+```
 
 ---
 
-## grpcdump: <a id='a_grpcdump'></a>
-- [homepage](https://github.com/rmedvedev/grpcdump)
+## go_fileTimestamp: <a id='a_go_fileTimestamp'></a>
 
----
+A tool to reset a file's timestamp
+
+**Usage:**
+```sh
+go_fileTimestamp test.txt
+```
+
+**Docker usage:**
+```sh
+docker run -ti --rm --network host ppamo/nettools:0.1.1 sh -c "go_fileTimestamp test.txt"
+```
+

@@ -85,8 +85,8 @@ ag -G .txt text
 
 **Docker usage:**
 ```sh
-docker run -t --rm -v $PWD:/mnt ppamo/nettools:0.1.0 sh -c "ag text"
-docker run -t --rm -v $PWD/mnt ppamo/nettools:0.1.0 sh -c "ag -G .txt text"
+docker run -t --rm -v $PWD:/mnt ppamo/nettools sh -c "ag text"
+docker run -t --rm -v $PWD:/mnt ppamo/nettools sh -c "ag -G .txt text"
 ```
 
 
@@ -105,7 +105,7 @@ heartbleeder github.com:443
 
 **Docker usage:**
 ```sh
-docker run -t --rm --network host ppamo/nettools:0.1.0 sh -c "heartbleeder github.com:443"
+docker run -t --rm --network host ppamo/nettools sh -c "heartbleeder github.com:443"
 ```
 
 
@@ -124,7 +124,7 @@ lsciphers github.com:443
 
 **Docker usage:**
 ```sh
-docker run -ti --rm --network host ppamo/nettools:0.1.0 sh -c "lsciphers github.com:443"
+docker run -ti --rm --network host ppamo/nettools sh -c "lsciphers github.com:443"
 ```
 
 
@@ -143,7 +143,7 @@ printf "GET / HTTP/1.0\r\n\r\n" | nc google.com 80
 
 **Docker usage:**
 ```sh
-docker run -ti --rm --network host ppamo/nettools:0.1.0 sh -c 'printf "GET / HTTP/1.0\r\n\r\n" | nc google.com 80'
+docker run -ti --rm --network host ppamo/nettools sh -c 'printf "GET / HTTP/1.0\r\n\r\n" | nc google.com 80'
 ```
 
 ---
@@ -161,7 +161,7 @@ nmap -v scanme.nmap.org
 
 **Docker usage:**
 ```sh
-docker run -ti --rm --network host ppamo/nettools:0.1.0 sh -c "nmap -v scanme.nmap.org"
+docker run -ti --rm --network host ppamo/nettools sh -c "nmap -v scanme.nmap.org"
 ```
 
 ---
@@ -179,7 +179,7 @@ nping -c 1 --tcp scanme.nmap.org google.com
 
 **Docker usage:**
 ```sh
-docker run -ti --rm --network host ppamo/nettools:0.1.0 sh -c "nping -c 1 --tcp scanme.nmap.org google.com"
+docker run -ti --rm --network host ppamo/nettools sh -c "nping -c 1 --tcp scanme.nmap.org google.com"
 ```
 
 ---
@@ -195,7 +195,7 @@ go_dnsGetA github.com
 
 **Docker usage:**
 ```sh
-docker run -ti --rm --network host ppamo/nettools:0.1.1 sh -c "go_dnsGetA github.com"
+docker run -ti --rm --network host ppamo/nettools sh -c "go_dnsGetA github.com"
 ```
 
 ---
@@ -211,7 +211,7 @@ go_lookupIP 8.8.8.8
 
 **Docker usage:**
 ```sh
-docker run -ti --rm --network host ppamo/nettools:0.1.1 sh -c "go_lookupIP 8.8.8.8"
+docker run -ti --rm --network host ppamo/nettools sh -c "go_lookupIP 8.8.8.8"
 ```
 
 ---
@@ -227,7 +227,7 @@ go_getServName github.com
 
 **Docker usage:**
 ```sh
-docker run -ti --rm --network host ppamo/nettools:0.1.1 sh -c "go_getServName github.com"
+docker run -ti --rm --network host ppamo/nettools sh -c "go_getServName github.com"
 ```
 
 ---
@@ -243,7 +243,7 @@ go_sshCrack IPList userDic passDic
 
 **Docker usage:**
 ```sh
-docker run -ti --rm --network host ppamo/nettools:0.1.1 sh -c "go_sshCrack IPList userDic passDic"
+docker run -ti --rm --network host ppamo/nettools sh -c "go_sshCrack IPList userDic passDic"
 ```
 
 ---
@@ -259,7 +259,7 @@ go_bruteHtmlForm passwords.txt https://test.com/login admin username password
 
 **Docker usage:**
 ```sh
-docker run -ti --rm --network host ppamo/nettools:0.1.1 sh -c "go_bruteHtmlForm passwords.txt https://test.com/login admin username password"
+docker run -ti --rm --network host ppamo/nettools sh -c "go_bruteHtmlForm passwords.txt https://test.com/login admin username password"
 ```
 
 ---
@@ -275,6 +275,6 @@ go_fileTimestamp test.txt
 
 **Docker usage:**
 ```sh
-docker run -ti --rm --network host ppamo/nettools:0.1.1 sh -c "go_fileTimestamp test.txt"
+docker run -ti --rm --network host ppamo/nettools sh -c "go_fileTimestamp test.txt"
 ```
 
